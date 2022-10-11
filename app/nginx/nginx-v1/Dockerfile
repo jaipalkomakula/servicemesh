@@ -6,7 +6,8 @@ EXPOSE 80
 #config
 copy ./nginx.conf /etc/nginx/nginx.conf
 
+
 # copy static maintanence
-COPY index.html /usr/share/nginx/html/index.html
+COPY ./*.html /usr/share/nginx/html/
 STOPSIGNAL SIGQUIT
 CMD ["nginx", "-g", "daemon off;"]

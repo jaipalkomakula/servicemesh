@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicemesh-flask-v2
+spec:
+  selector:
+    matchLabels:
+      app: servicemesh-flask
+      version: v2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: servicemesh-flask
+        version: v2
+    spec:
+      containers:
+        - image: docker.io/jaipalkomakula/flask:v2
+          name: flask-v2
+          ports:
+          - containerPort: 5000

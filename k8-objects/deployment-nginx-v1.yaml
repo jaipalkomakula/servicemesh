@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: servicemesh-nginx
+spec:
+  selector:
+    matchLabels:
+      app: servicemesh-nginx
+      version: v1
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: servicemesh-nginx
+        version: v1
+    spec:
+      containers:
+        - image: docker.io/jaipalkomakula/flask:v1
+          name: nginx-v1
+          ports:
+          - containerPort: 80

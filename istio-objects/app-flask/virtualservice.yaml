@@ -10,6 +10,6 @@ spec:
   http:
     - route:
         - destination:
-            host: servicemesh-nginx.prod.svc.cluster.local
+            host: servicemesh-flask.prod.svc.cluster.local
             port:
               number: 80
